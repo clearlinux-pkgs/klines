@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : klines
-Version  : 20.04.2
-Release  : 21
-URL      : https://download.kde.org/stable/release-service/20.04.2/src/klines-20.04.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.04.2/src/klines-20.04.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.04.2/src/klines-20.04.2.tar.xz.sig
+Version  : 20.08.0
+Release  : 22
+URL      : https://download.kde.org/stable/release-service/20.08.0/src/klines-20.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.08.0/src/klines-20.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.08.0/src/klines-20.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
@@ -70,15 +70,15 @@ locales components for the klines package.
 
 
 %prep
-%setup -q -n klines-20.04.2
-cd %{_builddir}/klines-20.04.2
+%setup -q -n klines-20.08.0
+cd %{_builddir}/klines-20.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591899065
+export SOURCE_DATE_EPOCH=1597786519
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -90,15 +90,15 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1591899065
+export SOURCE_DATE_EPOCH=1597786519
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/klines
-cp %{_builddir}/klines-20.04.2/COPYING %{buildroot}/usr/share/package-licenses/klines/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/klines-20.04.2/COPYING.DOC %{buildroot}/usr/share/package-licenses/klines/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
+cp %{_builddir}/klines-20.08.0/COPYING %{buildroot}/usr/share/package-licenses/klines/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/klines-20.08.0/COPYING.DOC %{buildroot}/usr/share/package-licenses/klines/bd75d59f9d7d9731bfabdc48ecd19e704d218e38
 pushd clr-build
 %make_install
 popd
@@ -151,6 +151,8 @@ popd
 /usr/share/doc/HTML/es/klines/index.docbook
 /usr/share/doc/HTML/et/klines/index.cache.bz2
 /usr/share/doc/HTML/et/klines/index.docbook
+/usr/share/doc/HTML/fr/klines/index.cache.bz2
+/usr/share/doc/HTML/fr/klines/index.docbook
 /usr/share/doc/HTML/it/klines/index.cache.bz2
 /usr/share/doc/HTML/it/klines/index.docbook
 /usr/share/doc/HTML/nl/klines/index.cache.bz2
